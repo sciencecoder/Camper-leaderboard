@@ -1,0 +1,61 @@
+@mixin color($color) {
+  background-color: $color;
+}
+
+%top-bottom {
+  @include color(#331a00);
+  color: white;
+}
+
+body {
+  @include color(#008080);
+}
+
+nav {
+  @extend %top-bottom;
+  font-family: "Space Mono";
+}
+
+header {
+  @extend %top-bottom;
+  height: 40px;
+}
+.container {
+  margin-bottom: 100px;
+  table {
+  border-collapse: collapse;
+  width: 100%;
+  @include color(white);
+  }
+
+  tr:nth-child(even) {
+    @include color(#dddddd);
+  }
+  th, td {
+    border: 2px solid #aaa;
+    text-align: left;
+    padding: 8px;
+    height: 50px;
+    font-size: 1.25em;
+  }
+  
+  .table-title {
+    color: green;
+    text-decoration: underline;
+  }
+  .user-info {
+    width: 40%;
+    img {
+     width: 10%;
+    }
+  }
+}
+
+footer {
+  @extend %top-bottom;
+  position: fixed;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  padding-top: 10px;
+}
